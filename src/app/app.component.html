@@ -2,16 +2,14 @@
   {{title}} app !
 </h1>
 <div class="row">
-  <div class="column" *ngIf=serviceList>
+  <div class="column text" *ngIf=serviceList>
     <label class="textClass">Control</label>
-    <li *ngFor="let service of serviceList; let i = index;" (click)="selectService(i)" [ngClass]="{'highlight': selectedIndex === i}">
-      {{ service.attributes.name }}
+    <li *ngFor="let service of serviceList; let i = index;" (click)="selectService(i, service)" [ngClass]="{'highlight': selectedIndex === i}">
+      <span>{{ service.attributes.name }}</span>
     </li>
   </div>
-  <div class="column" *ngIf=providerList>
+  <div class="column" *ngIf=serviceProviderList>
     <label class="textClass">Results</label>
-    <li *ngFor="let provider of providerList">
-      {{ provider.attributes.name }}
-    </li>
+      <app-providers  *ngFor="let provider of serviceProviderList" [provider]="provider"></app-providers>
   </div>
 </div>

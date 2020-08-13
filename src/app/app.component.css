@@ -10,6 +10,6 @@
   color: coral;
   }
 
-.highlight { 
-  background-color: green 
+.column .highlight span { 
+  background-color: blue; 
   }
